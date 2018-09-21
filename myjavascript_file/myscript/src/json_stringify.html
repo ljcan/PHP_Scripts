@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="json2.js"></script>
+    <script type="text/javascript">
+        var myAjaxObject;
+        function AjaxTransforText() {
+            var BigText = document.getElementById("BigText").value;
+            var array = new Array();
+            value[0] = "刘军强";
+            value[1] = 18;
+            value[2] = true;
+            value[3] = BigText;
+            var jsonString = JSON.stringify(array);
+            if (window.ActiveXObject) {
+                myAjaxObject = new ActionXObject("Microsoft.XMLHTTP");
+            } else {
+                myAjaxObject = new XMLHttpRequest();
+            }
+            alert("jsonString=" + jsonString);
+            myAjaxObject.open("post", "json?" + jsonString, true);
+
+            myAjaxObject.send(jsonString);
+        }
+        function AjaxTransferObjectRef(username, password, age, BigText) {
+            this.username = username;
+            this.password = password;
+            this.age = age;
+            this.BigText = BigText;
+        }
+    </script>
+</head>
+<body>
+<textarea id="BigText" cols="45" rows="5"></textarea>
+<input type="button" value="test" onclick="AjaxTransforText()"/>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            font-size: 30px;
+            font-color:blue;
+        }
+    </style>
+</head>
+<body>
+<h1>成员查询</h1>
+请输入员工编号:
+<input type="text" id="number" /><button id="search">确定</button><br/>
+<a id="searchResult"></a><br>
+<h2>注册成员</h2>
+请输入员工姓名:
+<input type="text" id="username"/><br/>
+请输入员工电话:
+<input type="text" id="telephone"/><br/>
+请输入员工地址:
+<input type="text" id="address"/>
+<button id="register"/>提交<br/>
+<a id="registerResult"></a>
+<script type="text/javascript">
+    document.getElementsByName("search").onclick=function() {
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", "search?number="+document.getElementsByClassName("number").value);
+        ajax.send();
+        //判断请求的状态码
+        ajax.onreadystatechange=function(){
+            if(ajax.readyState===4&&ajax.status==200){
+                document.getElementsByClassName("searchResult").innerHTML=ajax.response;
+            }
+        }
+    }
+</script>
+</body>
+</html>

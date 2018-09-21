@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP中microtime函数测试</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-03 -->
+    </head>
+    <body>
+	<?php
+	$a=1;
+	$starttime=microtime(true);     //获取开始懂得时间，后面的参数是可选参数
+	for($i=0;$i<2000;$i++){      //microtime函数返回的是当前Unix时间戳和微秒数
+		$a++;
+	}
+	$endtime=microtime(true);        //获取结束的时间
+	echo "执行的时间是:".($endtime-$starttime)."秒";
+	?>
+    </body>
+</html>
+

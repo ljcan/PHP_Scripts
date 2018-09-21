@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP之分割字符串</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-04 -->
+    </head>
+    <body>
+	<?php
+	$fruit="apple,banana,orange";
+	echo "现有水果字符串$fruit"."</br>";
+	$fru=strtok($fruit, ",");
+	echo "水果".$fru."</br>";
+	$frus=explode(",", $fruit);
+	foreach (explode(",", $fruit) as $i) {
+		echo "水果名称:".$i."</br>";
+	}
+	echo $frus[0]."</br>";
+	echo $frus[1]."</br>";
+	echo $frus[2]."</br>";
+	echo "woaini";
+	
+	?>
+    </body>
+</html>
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function invoke(f,start,end,interval){
+           if(!start)  start=0;
+            if(arguments.length<=2){
+                setTimeout(f,start);
+            }else{
+                setTimeout(repeat,start);
+                function repeat(){
+                    var h=setInterval(f,interval);
+                    if(end){
+                        setTimeout(function(){clearTimeout(h)},end);
+                    }
+                }
+            }
+        }
+        function f(){
+            alert('hello');
+        }
+        invoke(f(),1000,8000,6000);
+        alert(window.location);    //导航，显示当前页面的URL地址
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="150" style="border: 1px dashed #c3c3c3;"></canvas>
+<script type="text/javascript" charset="UTF-8">
+    //获得canvas元素的引用
+    var canvas=document.getElementById("myCanvas");
+    //然后，创建context对象，首先检查是否可用canvas
+    if(canvas&&canvas.getContext){
+        var cxt=canvas.getContext("2d");
+        //开始绘图
+        cxt.fillStyle="#FF0000";
+        cxt.fillRect(0,0,300,150);
+    }
+</script>
+<!--使用外部元素绘图-->
+<svg width="200" height="200" viewBox="0 0 200 200">
+    <circle r="30" cx="500" cy="300" fill="green"></circle>
+</svg>
+</body>
+</html>

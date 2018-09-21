@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>JavaScript的编码格式转换</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-07-17 -->
+	<script type="text/javascript" charset="UTF-8">
+	/*	var uri='http://www.baidu.com CNS';
+		var str1=encodeURI(uri);
+		var str2=encodeURIComponent(uri);
+		alert(str1);
+		alert(str2);
+		//eval（）实际上是相当于JavaScript解析器
+		var str3="var a=10,b=20; alert(a+b);";
+		eval(str3);
+		var str4="{name:'z3',age:20}";
+		var obj=eval('('+str4+')');      //将字符串解析为对象
+		alert(obj.name);
+		*/
+		var date=new Date();
+		var da=date.getDate();     //返回一月当中的第几天
+		var day=date.getDay();    //返回一周当中的第几天
+		alert(day);
+		alert(da);
+		document.write(date);
+	</script>
+</head>
+<body>
+</body>
+</html>
+

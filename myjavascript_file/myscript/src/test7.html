@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .reveal*{display: none;}
+        .reveal*.handle{display: block;}
+    </style>
+    <script type="text/javascript" charset="UTF-8">
+        //setTimeout(function(){alert('hello world')},2000);    //等待两秒输出
+        window.onload=function(){
+            var elements=document.getElementsByClassName("reveal");
+            for(var i=0;i<elements.length;i++){
+                var elt=elements[i];
+                var title=elt.getElementsByClassName("handle")[0];
+                addRevealHandler(title,elt);
+            }
+            function addRevealHandler(title,elt){
+                title.onclick=function(){
+                    if(elt.className=="reveal")
+                      elt.className="revealed";
+                    if(elt.className="revealed")
+                      elt.className="reveal";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <h1 class="handle">Click Here to Reveal Hidden Text</h1>
+    <p>This paragraph is hidden,it appends when you click on the title.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		 <title>测试PHP</title>
+	</head>
+	<body>
+        <?php
+        $nowtime=getdate();
+		echo checkdate(2, 31, 2017)?"有效":"无效"."</br>";
+		echo checkdate(5, 31, 2017)?"有效\n":"无效\n";
+		echo "系统当前的日期为:".$nowtime["year"]."年".$nowtime["mon"]."月".$nowtime["mday"]."日"."</br>";
+		echo "系统当前的时间为:".$nowtime["hours"]."点".$nowtime["minutes"]."分".$nowtime["seconds"]."秒"."</br>";
+		echo "今天是:".$nowtime["weekday"]."是".$nowtime["year"]."年的第".$nowtime["yday"]."天"."</br>";
+		echo "结果是:".date("F j,y,g:i a")."\n";
+		echo "今天的日期是:".date("m.d.y")."\n";
+		echo '</br>'.strtotime("10 september 2000")."\n";
+		echo date("j-M-Y",strtotime("+1 week"));
+		?>
+	</body>
+</html>

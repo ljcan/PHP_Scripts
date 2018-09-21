@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //创建ajax对象
+        function createXML(data){
+            if(!data){
+                return null;
+            }
+            var ajx=null;
+            try {
+                ajx = new ActiveXObject('Microsoft.XMLDOM');
+                ajx.load(data);
+            }catch(e){
+                try{
+                    ajx=((new DOMParser()).parseFromString(data,'text/xml'));
+                }catch(e){
+                    return null;
+                }
+            }
+            return ajx;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

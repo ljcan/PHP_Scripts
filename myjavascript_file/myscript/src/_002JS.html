@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<titljavasc实现文字打印效果</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-09-08 -->
+	<script type="text/javascript">
+	var max=0;
+	function textlist(){
+		max=textlist.arguments.length;
+		for(i=0;i<max;i++){
+			this[i]=textlist.arguments[i];
+		}
+	}
+	t1=new textlist("随着网络时代的到来"，"中国的个人网站如雨后春笋般的冒了出来");
+	var x=0,pos=0;
+	var l=t1[0].length;
+	function textticker(){
+		document.tickform.tickfield.value=t1[x].substring(0,pos)+"_";
+		if(pos++==l){
+			pos=0;
+			setTimeout("textticker()",400);
+			if(++x==max) x=0;
+			l=t1[x].length;
+		}else{
+			setTimeout("textticker()",200);
+		}
+	}
+	</script>
+</head>
+<body onLoad="textticker()">
+<form name="tickform">
+	<textarea name="tickfield" rows="5" cols="100" style="background-color:rgb(0,0,0);color: rgb(255,255,255);cursor: default; 
+	font-size: 12px" wrap=virtual>cool</textarea>
+</form>
+</body>
+</html>
+

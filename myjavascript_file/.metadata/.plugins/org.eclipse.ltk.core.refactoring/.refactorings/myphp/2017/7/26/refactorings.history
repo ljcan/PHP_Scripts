@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;myphp/src/new_file.php&apos; to &apos;new_file03.php&apos;" description="Rename resource &apos;new_file.php&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/new_file.php" name="new_file03.php" stamp="1498897620619" updateReferences="true"/>
+</session>

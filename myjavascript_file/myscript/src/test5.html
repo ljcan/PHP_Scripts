@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" charset="UTF-8">
+    function Range(from,to){
+        this.from=from;
+        this.to=to;
+        return this;
+    }
+
+    Range.prototype={     //原型对象定义方法，这些方法为每一个范围对象继承
+        includes:function(x){
+            return x>=this.from&&x<=this.to;
+        },
+        foreach:function(f){
+            for(var a=Math.ceil(this.from);x<=this.to;x++) foreach(x);
+        },
+        tostring:function(){
+            return "("+this.from+"..."+this.to+")";
+        }
+    };
+
+    var r=new Range(1,5);
+//    alert(r.name);
+    alert(r.includes(4));
+    alert(r.toString());
+</script>
+</body>
+</html>

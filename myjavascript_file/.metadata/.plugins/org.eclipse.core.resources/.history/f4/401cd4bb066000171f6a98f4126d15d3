@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP中可变参数函数测试</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-03 -->
+    </head>
+    <body>
+	<?php
+		function get(){      //没有参数，使用的是可选参数
+			$totalnum=func_num_args();     //使用内置函数获得函数参数的总个数
+			echo '参数的总数:',$totalnum,'</br>';
+			$test=func_get_args();    //使用内置函数得到所有参数的值
+			for($i=0;$i<$totalnum;$i++){
+				echo '第',($i+1),'个参数是:',$test[$i],'</br>';
+			}
+		}
+		function GetUserName(){
+			$user=array();
+			$user[]="张三";
+			$user[]="20";
+			$user[]="学生";
+			return $user;
+		}
+		get("刘军强","男","1998-10-13","计算机科学与技术","江苏科技大学");
+		list($name,$age,$work)=GetUserName();
+		echo '姓名:$name   年龄:$age   身份:$work','</br>';
+	?>
+    </body>
+</html>
+

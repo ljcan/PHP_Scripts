@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>this对象</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-07-18 -->
+	<script type="text/javascript" charset="UTF-8">
+		//this在全局中相当于Windows，而在局部函数中时相当于当前对象。
+		//this对象是指运行时期基于执行环境所绑定的。
+		//this总是指向调用者
+		var k=10;
+		function test(){
+			var k=0;     //为局部变量
+			this.k=20;       //指向全局变量
+			k=30;
+		}
+		test();       //这里相当于windows对象调用test这个函数，所以this指向调用者，即指向Windows
+		alert(k);
+		//call，apply方法用于绑定一些函数，用于传递参数，调用
+		function sum(a,b){
+			return a+b;
+		}
+		function call001(num1,num2){
+			return sum.call(this,num1,num2);     //将sum这个函数绑定到call001这个函数的作用域中。
+		}
+		function apply001(num1,num2){
+			//与call函数作用相同，都是将sum这个函数绑定到apply001这个函数中。
+			return sum.apply(this,[num1,num2]);
+		}
+		
+		alert(call001(10,1));
+		alert(apply001(1,2));
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+

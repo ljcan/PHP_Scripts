@@ -1,0 +1,10 @@
+<?php
+   $month=10;
+   function GetMonth($month)
+   {
+       global $month;      //在函数内部声明全局变量时只要加关键字global
+       $month--;
+	   echo $month;
+   }
+   GetMonth($month);
+?>

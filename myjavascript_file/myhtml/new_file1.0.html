@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<fieldset>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<lable>
+日期:<input type="DATETIME-LOCAL" name="UER_DATE" />
+头发颜色:<input type="color" name="user_hair">
+图片按钮:<input type="image" src="sun.jpg" width="100" height="25">
+Webpage:<input type="url" list="url_list" name="link">
+<datalist id="url_list">
+    <option label="zhangyafei"
+            value="http://zhangyafei.wordpress.com"/>
+    <option label="W3C" value="http://www.W3.org"/>
+    <option label="Google" value="http://www.google.com"/>
+    <option label="Microsoft" value="http://www.microsoft.com"/>
+</datalist>
+<input type="search" name="s" placeholder="请输入搜索的关键字">
+<br>
+<form action="" method="get">
+    用户名：<input type="text" name="user_name" ><br>
+    加密：<keygen name="security">
+    <input type="security">
+</keygen><br>
+    <input type="submit" name="login" value="提交">
+</form>
+<br>
+<form action="" method="get">
+    <p>
+        10+5=<output name="sum"></output>
+    </p>
+    <button type="submit" onclick="javascript:submitHandler(event);">
+        计算
+    </button>
+</form>
+<script>
+    function submitHandler(event){
+        var form=document.forms[0];
+        form['sum'].value=15;
+        event.preventDefault();
+    }
+</script>
+<progress max="100" value="85">
+    <span id="objprogress">85</span>%
+</progress><br>
+<p>Your score is:<meter value="91" min="0" max="100">A+</meter> </p>
+<p>Your score is:<meter value="21" min="0" max="100" low="40" high="90" optimum="100">D+</meter> </p>
+<p>Your score is:<meter value="51" min="0" max="100" low="40" high="90" optimum="100">C+</meter> </p>
+<p>Your score is:<meter value="91" min="0" max="100" low="40" high="90" optimum="100">C+</meter> </p>
+<P>Your score is:<meter value="0.91">A+</meter></P>
+<p>Your score is:<meter>2 out of 10</meter></p>
+<p><meter>80%</meter></p>
+<!--显示关联-->
+<form action="..." method="post">
+    <table>
+        <tr>
+            <td><label for="fname">first name</label> </td>
+            <td><input type="text" name="fristname" id="fname"></td>
+        </tr>
+    </table>
+</form>
+<form action="..." method="post">
+    <p>
+        <label for="firstname">first name...</label>
+        <input type="text" id="firstname"><br>
+    </p>
+</form>
+<!--隐私关联-->
+<label>
+    frist name
+    <input type="text" name="firstnam">
+</label>
+<!--为表单添加结构-->
+<form name="addUser" id="addUser" method="post" action="addUser.asp>
+<fieldset>
+<legend>用户注册必填项</legend>
+<lable id="normal" for="username">用户名:</lable>
+<input name="user_id" id="username" type="text">
+</fieldset>
+</form>
+<!--禁用控件或只读控件-->
+<input disabled name="raw" value="black">
+</body>
+</html>

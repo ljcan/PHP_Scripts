@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP之数组</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-05 -->
+    </head>
+    <body>
+	<?php
+	//数字索引数组
+	$name=array("one","two","three");       //下标默认从0开始
+	echo "$name[0]{$name[1]}"."</br>";       
+	$name=array(3=>"one","two","three");     //也可以指定从哪个键名值开始存储数据
+	echo "$name[3]$name[4]"."</br>";
+	$name=array(1=>"one",3=>"two",5=>"three");   //也可以分别指定键名值
+	echo "$name[1]{$name[3]}{$name[5]}"."</br>";
+	//关联数组：关联数组的键名可以是数值和字符串的混合型式
+	$name=array("首个元素"=>1,2=>"最后一个元素","three"=>3);
+	echo $name["three"];
+	?>
+    </body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP之字符串</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-04 -->
+    </head>
+    <body>
+	<?php
+	$key="banana";
+	foreach (count_chars($key,1) as $i) {      //按照二十六个字母的顺序处理字符串
+		echo $i;
+	}
+	echo'</br>';
+	foreach (count_chars($key,1) as $i => $val) {
+		echo "字符串中有 $val 个".chr($i)."</br>";
+	}
+	echo count_chars($key,3),'</br>';
+	$fruit="apple banana orange";
+	echo "现有水果字符串  $fruit"."</br>";
+	echo "该字符串中的水果有".str_word_count($fruit,0)."个"."</br>";
+	foreach (str_word_count($fruit,1) as $i) {
+		echo "水果名称:".$i."</br>";
+	}
+	print_r(str_word_count($fruit,1));
+	$str="---key---";
+	echo $key."</br>";
+	echo ltrim($key,"-");
+	?>
+    </body>
+</html>
+

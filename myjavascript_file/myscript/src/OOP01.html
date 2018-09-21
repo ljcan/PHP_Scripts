@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>javascript面向对象程序设计</title>
+    <script type="text/javascript" charset="UTF-8">
+//        function Person(name,age){
+//            this.name=name;
+//            this.age=age;
+//            this.sayName=sayName;
+//        }
+//        function sayName(){
+//            alert(this.name);
+//        }
+//        var p1=new Person('张三',18);
+//        var p2=new Person('李四',25);
+//        p1.sayName();
+        //prototype创建每一个函数都有一个prototype属性，这个属性其实是一个指针。
+        //而这个指针总指向一个对象，这个对象的用途就是将特定的属性和方法包含在内，起到一个所有实例共享的作用。
+        function Person(){
+
+        }
+        var obj=Person.prototype;        //通过指向该对象的指针获得指向这个对象的引用
+//      alert(obj.constructor);
+        obj.name='刘军强';
+        obj.age=18;
+        obj.sayName=function sayName(){
+            alert(this.name);
+        }
+        var p1=new Person();
+        var p2=new Person();
+        alert(p1.age);
+        alert(p2.age);
+        p1.sayName();
+        p2.sayName();
+
+
+    </script>
+</head>
+<body>
+<!--<a href="javascript:new Person('zhangsan',25).sayName();">点击</a>-->
+</body>
+</html>

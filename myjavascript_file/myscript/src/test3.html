@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var data=[1,2,3,4];
+    var sqrtsum=0;
+    data.forEach(function f(x){     //把data数组的没有一个元素赋给函数f()
+        sqrtsum+=x*x;
+    });
+    alert(sqrtsum);
+    alert(data.join("->"));
+    alert(data.toString());
+    alert([1,2,3].toString());
+    var str=[1,5,null,undefined,6, ,7, ,];
+    str=str.filter(function fun(x){             //过滤掉数组中的null和undefined
+        return x!==null&&x!==undefined;
+    });
+    alert(str);
+    alert(str.some(function f(x){             //some至少函数数组中的一个元素返回true
+        return x<10;
+    }));
+    var a=[4,9,6,7,2];
+    var max=a.reduce(function m(x,y){    //返回数组 中的最大值
+        return (x>y)?x:y;
+    });
+    alert(max);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP之字符串加密</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-05 -->
+    </head>
+    <body>
+	<?php
+	//单向加密
+	$str=md5("欢迎进入php");
+	echo "md5加密:".$str."</br>";
+	$str=crypt("欢迎进入php");
+	echo "crypt加密:".$str."</br>";
+	//可逆加密
+	$words=base64_encode("欢迎进入php");   //加密
+	echo "加密：".$str."</br>";
+	$words=base64_decode($words);
+	echo "解密：".$words."</br>";
+	//urlencode()函数对字符串进行加密
+	$str=urlencode("欢迎进入php");
+	echo "加密：".$str."</br>";
+	$str=urldecode($str);
+	echo "解密:".$str;
+	
+	?>
+    </body>
+</html>
+

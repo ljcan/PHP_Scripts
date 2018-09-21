@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>日期和时间</title>
+</head>
+<body>
+<script>
+//    var time=new Date(2017,8,7,14,04,25);
+//    alert(time);
+//    alert(time.getFullYear());
+//    alert(time.getMonth());
+//    alert(time.getHours());
+//    var a= 1,b=2;
+//    alert(a!=b);
+//    alert(a!==b);
+//    var s="hello";
+//    s.len=5;
+//    var l= s.len;
+//    alert(l);
+//    var S=new String(s);      //用构造函数显示创建包装对象
+//    S.len=6;
+//    var m= S.len;
+//    alert(m);
+//    var obj={obj1:{x:1,y:2},obj2:{x1:5,y1:9}};
+//    alert(obj.obj1.x);
+//    alert(obj.obj1.y);
+//    alert(obj.obj1);
+//    alert(obj);
+//    var a={x:1,y:3};
+//    alert(a.x);
+    var success=false;
+    var str=[1,2,3,4];
+    var  sum=0;
+    labelname:if(str){
+        for(var i=0;i<str.length;i++){
+            var value=str[i];
+            if(!value){
+                break labelname;
+            }
+            for(var j=0;j<value.length;j++){
+                var count=value[j];
+                if(isNaN(count)){
+                    break labelname;
+                }
+            }
+            sum+=value;
+        }
+        success=true;     //如果中间没有出错则success返回true
+    }
+//    alert(sum);
+//    alert(success);
+    function errorInfo(s){
+        alert(s);
+    }
+    function f(x){
+        if(x<0) throw new errorInfo("x不能是负数");
+        x/=2;
+        alert(x);
+    }
+//    f(-1);      //当程序抛出异常的时候，解析器会终止程序的运行
+//    f(2);
+//    document.forms[0].pwd.value
+    function fun(s){
+    if(0===undefined) debugger;          //当调用该函数时没有传入参数，则停止运行
+    alert(s);
+}
+//    fun();
+//    fun(5);
+    function fc(){
+        "use strict"       //使用严格模式
+    alert(typeof (this));          //判断是否是严格模式，如果是，则是undefined，否则是全局变量
+}
+    fc();    //输出 object，说明是非严格模式
+</script>
+<form>
+    <input type="text" name="name"/>姓名
+    <input type="password" name="pwd">密码
+</form>
+</body>
+</html>

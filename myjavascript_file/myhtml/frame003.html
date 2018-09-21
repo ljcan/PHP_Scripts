@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>菜单</title>
+</head>
+<body>
+<menu type="toolbar">
+    <li>
+        <menu label="文件">
+            <button type="button" onclick="fnew()">新建...</button>
+            <button type="button" onclick="fopen()">打开...</button>
+            <button type="button" onclick="fsave()">保存...</button>
+            <button type="button" onclick="fsaveas()">另存...</button>
+        </menu>
+    </li>
+    <li>
+        <menu label="编辑">
+            <button type="button" onclick="ecopy()">复制</button>
+            <button type="button" onclick="ecut()">剪切</button>
+            <button type="button" onclick="epaste()">粘贴</button>
+        </menu>
+    </li>
+    <li>
+        <menu label="帮助">
+            <li><a href="help.html">软件帮助</a> </li>
+            <li><a href="about.html">关于本软件</a> </li>
+        </menu>
+    </li>
+</menu>
+</body>
+</html>

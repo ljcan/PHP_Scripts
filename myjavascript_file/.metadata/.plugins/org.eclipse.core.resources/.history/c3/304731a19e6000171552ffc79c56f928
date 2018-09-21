@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>JavaScript之object对象类型</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-04 -->
+        <script type="text/javascript" charset="UTF-8">
+            //创建对象的两种方式
+          //  var obj=new object();
+            var obj={};
+            //创建对象属性
+            obj.name="张三";
+            obj.sex="男";
+            obj.age=20;
+            obj.say=function(){
+                alert('hello world');
+            };
+         /*   alert(obj.name);
+            alert(obj.age);
+            obj.say();
+            */
+           //删除对象的属性
+        /*   delete obj.sex;
+           delete obj.say();
+           alert(obj.name);
+           alert(obj.sex);
+           alert(obj.age);
+           obj.say(); */
+          //遍历对象的属性 for in 语句
+          for(var value in obj){
+             // alert(value);
+             alert(value+":"+obj[value]);     //输出属性及其值
+          }
+          //constructor保存对象的创建函数
+          alert(obj.constructor);
+          //hasOwnProperty(propertyname)这个函数给定属性在该对象中是否存在
+          alert(obj.hasOwnProperty('name'));
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+

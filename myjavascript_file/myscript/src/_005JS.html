@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jquery特效单击标题切换内容</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            font-family: 微软黑雅;
+        }
+
+    </style>
+
+</head>
+<body>
+<h2>你好！</h2>
+<p>欢迎使用jQuery实现文字的特效</p>
+<h2>你好！</h2>
+<p>欢迎使用jQuery实现文字的特效</p>
+<h2>你好！</h2>
+<p>欢迎使用jQuery实现文字的特效</p>
+<h2>你好！</h2>
+<p>欢迎使用jQuery实现文字的特效</p>
+<h2>你好！</h2>
+<p>欢迎使用jQuery实现文字的特效</p>
+</body>
+<script>
+    $('h2').click(function(){
+                $(this).next().toggle(1000);   //toggle单击循环事件，可以使文字隐藏或者展示出来
+            }
+    )
+</script>
+</html>

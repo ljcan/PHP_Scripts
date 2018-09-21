@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" charset="utf-8">
+//    function test(){
+//        var str1=arguments[0];
+//        var str2=arguments[1];
+//        alert(str1);
+//        alert(str2);
+//    }
+//    test("hello");
+//==================================================
+//    var str=["frist","second","third"];
+//    alert(str.join("*"));
+
+//    alert(screen.availHeight);
+//    alert(screen.availWidth);
+//    alert(screen.height);
+//    alert(screen.width);
+//    ===================================
+//var body=document.getElementsByTagName("body")[0];
+//    for(var pro in navigator){
+//        var ele=document.createElement("p");
+//        var text=document.createTextNode(pro+":"+navigator[pro]);
+//        ele.appendChild(text);
+//        body.appendChild(ele);
+//    }
+//    =====================
+    //检测一个网站是否使用java搭建
+    if(navigator.javaEnabled()){
+        alert("java is enable");
+    }else{
+        alert("java is not enable");
+    }
+//    =============================
+var body=document.getElementsByTagName("body")[0];
+    for(var pro in location){
+        var ele=document.createElement("p");
+        var text=document.createTextNode(pro+":"+location[pro]);
+        ele.appendChild(text);
+        body.appendChild(ele);
+    }
+</script>
+</body>
+</html>

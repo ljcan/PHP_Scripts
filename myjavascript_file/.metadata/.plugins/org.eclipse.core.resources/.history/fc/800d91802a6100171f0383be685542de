@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP之分割,截取,填充,比较,替换字符串</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-04 -->
+    </head>
+    <body>
+	<?php
+	$fruit="apple,banana,orange";
+	echo "现有水果字符串$fruit"."</br>";
+	$fru=strtok($fruit, ",");
+	echo "水果".$fru."</br>";
+	$frus=explode(",", $fruit);
+	foreach (explode(",", $fruit) as $i) {     //explode()函数根据指定的分隔符，将字符串分割成一个由字符串组成的数据。
+		echo "水果名称:".$i."</br>";
+	}
+	echo $frus[0]."</br>";
+	echo $frus[1]."</br>";
+	echo $frus[2]."</br>";
+	//implode()函数的功能和explode()函数的功能相反，它可以根据一个指定的分隔符，将一个字符数组中的元素连接起来，组成一个长字符串
+	$ary=array("apple","banana","orange");
+	$arstr=implode(";", $ary);
+	echo $arstr;
+	//截取字符串
+	//strstr($str1,$str2)函数返回$str1中从$str2第一次出现到最后的部分
+	$he="</br>输出：hello,baby";
+	echo $he."</br>";
+	echo strstr($he, "hello");
+	//strrchr($str1,$str2)函数返回$str1中从$str2最后一次出现到最后的部分
+	$them="</br>message:张三，成绩91分；</br>message:李四，成绩82分;</br>message:王五，成绩73分";
+	echo $them."</br>";
+	echo "倒数第一的是：".strrchr($them, "message")."</br>";
+	//填充字符串
+	$struc="PHP";
+	echo str_pad($struc, 15,"*")."</br>";
+	echo str_pad($struc,15,"_",STR_PAD_LEFT)."</br>";
+	echo str_pad($struc,30,"-=",STR_PAD_BOTH)."</br>";
+	//strcasecmp()函数可以执行不区分大小写的比较,strcmp()函数区分大小写
+	echo "比较apple和banana的结果为:".strcasecmp("apple", "banana")."</br>";
+	echo "比较APPLE和apple的结果为:".strcmp("APPLE","apple")."</br>";
+	//strncasecmp()函数可以比较两个字符串的大小，不区分大小写，可以指定两个字符串在比较时使用的长度
+	//strncmp()函数区分大小写
+	echo "比较 iphone4和iphone4s前7位 结果为:".strncasecmp("iphone4","iphone4s", 7)."</br>";
+	//定位字符串
+	//stripos()查找字符串中的一个字符在字符串中首次出现的位置(忽略大小写)，strrpos()函数是找最后出现的位置(区分大小写)
+	echo "a第一次出现的位置为:".stripos("banana", "a")."</br>";
+	echo "a最后一次出现的位置是:".strrpos("banana", "a")."</br>";
+	//substr_count()函数查找一个字子符串到该字符串中出现的次数
+	echo "a出现的次数为:".substr_count("banana", "a")."</br>";
+	//替换字符串
+	//str_replace()
+	$key="*********key**********</br>*********key**********</br>*********key**********</br>";
+	echo $key;
+	echo str_replace("key", "ooo", $key);
+	//字符串与HTML转换
+	//nl2br()把\n转换为</br>
+	$s="我爱你，你好吗？\n真的好安静\n";
+	echo $s;
+	echo nl2br($s);
+	?>
+    </body>
+</html>

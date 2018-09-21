@@ -1,0 +1,15 @@
+<?php
+class Student{
+public function functionName()
+{
+static $value=0;
+$value++;
+echo $value;
+echo'</br>';
+}
+}
+$stu=new Student();
+$stu->functionName();
+$stu->functionName();
+$stu->functionName();
+?>

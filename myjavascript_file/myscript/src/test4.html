@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" charset="utf-8">
+    function counter(){
+        var n=0;
+        return {
+            count:function(){return n++;},
+            reset:function(){return n=0;}
+        };
+    }
+    var a=counter(); var b=counter();
+//    alert(a.count());
+//    alert(a.count());
+//    alert(a.count());
+//    alert(a.reset());
+//    alert(a.count());
+    //通过addprivateproperty()方法给对象 添加私有属性
+    function addPrivateProperty(o,name,fun){
+        var value;
+        o["get"+name]=function(){return value;};
+        o["set"+name]=function(v){
+            if(!fun(v)){
+                alert("error");
+                throw new String("error");
+            }else{
+                value=v;
+            };
+        }
+    }
+    var o={};
+    addPrivateProperty(o,"Name",function(x){return typeof x=="string"});
+    o.setName("hello");
+    alert(o.getName());
+    o.setName(5);
+    alert(o.getName());
+
+</script>
+</body>
+</html>

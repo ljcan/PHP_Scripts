@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jquery特效水果复制选择</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            font-family: 微软黑雅;
+        }
+        select{
+            width: 200px;
+            height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+<h1>水果选择</h1>
+<form action="javascript:">
+    <select id="s1" size="2">
+        <option value="">西瓜</option>
+        <option value="">冬瓜</option>
+        <option value="">苹果</option>
+        <option value="">南瓜</option>
+    </select>
+    <input type="button" value=">>" id="btn"/>
+    <select name="" id="s2" size="2">
+    </select>
+</form>
+</body>
+<script>
+    $('#btn').click(function(){
+        $('#s1 option:selected').clone().appendTo('#s2');
+    })
+</script>
+</html>

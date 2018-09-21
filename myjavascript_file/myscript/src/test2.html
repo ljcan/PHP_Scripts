@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" charset="utf-8">
+    var o={};
+    Object.defineProperty(o,"x",{
+        value:1,
+        writable:false,             //不可写
+        enumrable:true,
+        configurable:true
+    });
+    alert(o.x);
+    o.x=6;
+    alert(o.x);
+    alert(o.toString());
+</script>
+</body>
+</html>

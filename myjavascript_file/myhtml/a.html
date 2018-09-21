@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>提交信息</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-07-08 -->
+	<script language="JavaScript" charset="UTF-8">
+		function Post(){
+			url="b.html?name="+escape(document.form.name.value);
+			location.href=url;
+		}
+	</script>
+</head>
+<body>
+<form name="form" action="#">
+	<input type="text" name="name" />
+	<input type="button" onclick="Post()" value="Post" />
+</form>
+</body>
+</html>
+

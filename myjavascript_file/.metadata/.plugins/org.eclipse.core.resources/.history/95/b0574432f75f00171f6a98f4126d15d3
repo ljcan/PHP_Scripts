@@ -1,0 +1,12 @@
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		 <title>测试PHP</title>
+	</head>
+	<body>
+        <?php
+		echo checkdate(2, 31, 2017)?"有效":"无效"."</br>";
+		echo checkdate(5, 31, 2017)?"有效":"无效"."</br>";
+		?>
+	</body>
+</html>

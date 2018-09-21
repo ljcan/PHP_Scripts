@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>模拟实现用户系统登录功能</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-03 -->
+    </head>
+    <body>
+	<?php
+	function checkLogin($name,$pass){
+		if($name=="admin"&&$pass=="123456"){
+			return true;
+		}else{
+			return  false;
+		}
+	}
+	function getInfo(){
+		$user=array();
+		$user[]="刘军强";
+		$user[]="男";
+		$user[]="甘肃省天水市张家川县龙山镇官泉村";
+		$user[]="汉族";
+		return $user;
+	}
+	function lastoper($name,$pass){
+		checkLogin($name, $pass);
+		list($realname,$gender,$address,$nation)=getInfo();
+		$result=checkLogin($name, $pass);
+		if($result){
+		echo '欢迎进入用户管理系统','</br>';
+		echo '====================','</br>';
+		echo "恭喜您，用户$name 登录成功。当前登录时间是:".date("F j,Y,g:i a");
+		echo"</br>";
+		echo '您的详细信息是:','</br>';
+		echo "真实姓名:$realname \t性别:$gender \t联系地址:$address\t民族:$nation";
+		echo"</br>";
+		echo '您还可进行下面的操作\:','</br>','1.查看用户权限','</br>','2.设置用户权限','</br>','3.操作用户','</br>','4.系统设置','</br>','5.退出系统','</br>','6.更多功能';
+		}else{
+			echo "很抱歉，用户名或密码登录失败。请重新修改您的用户名和密码进行登录";
+		}
+	}
+	lastoper("admin", "123456");
+	?>
+    </body>
+</html>
+

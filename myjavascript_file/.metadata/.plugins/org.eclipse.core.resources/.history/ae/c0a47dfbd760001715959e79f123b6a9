@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP之分割,截取字符串</title>
+        <meta name="author" content="Shinelon" />
+        <!-- Date: 2017-07-04 -->
+    </head>
+    <body>
+	<?php
+	$fruit="apple,banana,orange";
+	echo "现有水果字符串$fruit"."</br>";
+	$fru=strtok($fruit, ",");
+	echo "水果".$fru."</br>";
+	$frus=explode(",", $fruit);
+	foreach (explode(",", $fruit) as $i) {     //explode()函数根据指定的分隔符，将字符串分割成一个由字符串组成的数据。
+		echo "水果名称:".$i."</br>";
+	}
+	echo $frus[0]."</br>";
+	echo $frus[1]."</br>";
+	echo $frus[2]."</br>";
+	//implode()函数的功能和explode()函数的功能相反，它可以根据一个指定的分隔符，将一个字符数组中的元素连接起来，组成一个长字符串
+	$ary=array("apple","banana","orange");
+	$arstr=implode(";", $ary);
+	echo $arstr;
+	//截取字符串
+	//strstr($str1,$str2)函数返回$str1中从$str2第一次出现到最后的部分
+	$he="</br>输出：hello,baby";
+	echo $he."</br>";
+	echo strstr($he, "hello");
+	//strrchr($str1,$str2)函数返回$str1中从$str2最后一次出现到最后的部分
+	$them=<<<student
+	message:张三，成绩91分；</br>message:李四，成绩82分;</br>message:王五，成绩73分;
+	student;
+	echo $them."</br>";
+	echo "倒数第一的是：".strrchr($them, "message");
+	echo "woaini";
+
+	?>
+    </body>
+</html>
+
+
+

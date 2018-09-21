@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>学生信息录入</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-07-08 -->
+</head>
+<body>
+	<h2 align="center">学生信息录入</h2>
+	<hr align="center" size="2" width="300" />
+	<form action="../new_file04.html" method="post" align="center" onsubmit="return validate();">
+		<table border="1" width="400" cellpadding="1" cellspacing="1" align="center">
+			<tr>
+				<td>姓名：</td><td><input type="text" name="sname" maxlength="10"
+					size="20" /></td>
+			</tr>
+			<tr>
+				<td>密码：</td><td><input type="password" name="pwd" size="20" /></td>
+			</tr>
+			<tr>
+				<td>性别：</td><td><input type="radio" name="stsex" checked />男
+					<input name="stsex" type="radio" />女</td>
+			</tr>
+			<tr>
+				<td>兴趣：</td><td><input type="checkbox" name="interest" checked/>音乐
+					<input name="interest" type="checkbox" />电影电视
+					<input name="interest" type="checkbox" />运动</td>
+			</tr>
+			<tr>
+				<td>专业：</td><td><select name="speciality" size="2" multiple>
+					<option value="计算机">计算机</option>
+					<option value="通信">通信</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交" /></td>
+				<td><input type="reset" value="重置" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+

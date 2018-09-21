@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Javascript构造函数的三种方式</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-07-17 -->
+	<script type="text/javascript" charset="UTF-8">
+		//function语句式
+		//对于function语句式的函数，JavaScript解析器会优先解析
+		//test();
+		//在JavaScript中NaN是唯一与自身不相等的数据。
+		//函数的形参和实参可以不相等。
+		function test1(a,b){              //
+			alert("我是test1");
+			//alert(test1.length);      //函数的属性length得到的结果是函数形参的个数。
+			//函数的实际参数内部就是用一个数组去接受函数的实际参数
+			//arguments对象，可以访问函数额实际参数。
+			alert(arguments.length);      //输出的是实参的长度
+			//可以通过遍历arguments数组的方式来获取实参的数据。
+			//arguments.callee方法指向的是函数本身，
+			alert(arguments.callee.length);      //相当于形参的长度
+		}
+		//也可以把一个函数赋值给一个变量
+		var F=test1;
+		test1=null;       //这种方式要使用arguments.callee，因为它是指向函数本身。
+		F();
+		//test1();
+		//函数的直接量
+		var test2=function(){
+			var b="我是test2";
+			alert(b);
+		}
+		test2();
+		//function的构造函数式
+		var test3=new Function("a","b","return a+b;");
+		alert(test3(10,220));
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+

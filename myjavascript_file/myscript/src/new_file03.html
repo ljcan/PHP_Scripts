@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>javascript之模拟Map对象</title>
+	<meta name="author" content="Shinelon" />
+	<!-- Date: 2017-07-15 -->
+	<script type="text/javascript" charset="utf-8">
+	  function Map(){
+	  	var obj={};           //空的对象容器，承装键值对
+	  	 this.put=function(key,value){
+	  	 	obj[key]=value;
+	  	 }
+	  	 this.get=function(key){
+	  	 	return obj[key];
+	  	 }
+	  	 this.size=function(){     //数组的大小
+	  	 	var count=0;
+	  	 	for(var num in obj){
+	  	 		count++;
+	  	 	}
+	  	 	return count;
+	  	 }
+	  }
+	  var m=new Map();
+	  m.put('1','123');
+	  m.put('2','nihao');
+	  m.put('3',true);
+	  alert(m.get('1'));
+	  alert(m.get('2'));
+	  alert(m.get('3'));
+	  alert('大小为：');
+	  alert(m.size());
+	 </script>
+</head>
+<body>
+<p>This is  a paragragh of html</p>
+</body>
+</html>
+
